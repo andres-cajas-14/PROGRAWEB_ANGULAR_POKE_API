@@ -4,7 +4,7 @@ Aplicación web hecha con **Angular** que simula un duelo por turnos entre dos P
 
 Práctica 02 – Programación y Plataformas Web (Universidad Politécnica Salesiana).
 
-**Sitio desplegado:** https://TU-PROYECTO.vercel.app  <!-- reemplazar por la URL real de Vercel -->
+**Sitio desplegado:** https://prograweb-angular-poke-api.vercel.app
 
 ## Funcionalidades
 
