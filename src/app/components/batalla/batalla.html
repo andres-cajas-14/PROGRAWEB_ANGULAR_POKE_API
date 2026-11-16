@@ -1,0 +1,70 @@
+<section class="jugadores">
+  <div class="lado">
+    <app-buscador-pokemon etiqueta="Tu luchador" (elegido)="elegirJugador($event)" />
+
+    @if (jugador(); as j) {
+      <app-tarjeta-pokemon [luchador]="j" [vida]="vidaJugador()" />
+    } @else {
+      <p class="vacio">Busca a tu luchador para empezar.</p>
+    }
+  </div>
+
+  <div class="lado">
+    <app-buscador-pokemon etiqueta="Tu rival" (elegido)="elegirRival($event)" />
+
+    @if (rival(); as r) {
+      <app-tarjeta-pokemon [luchador]="r" [vida]="vidaRival()" />
+    } @else {
+      <p class="vacio">Busca a tu rival para empezar.</p>
+    }
+  </div>
+</section>
+
+@if (jugador(); as j) {
+  @if (rival()) {
+    <section class="panel">
+      <h2>¡Elige tu ataque!</h2>
+
+      <div class="ataques">
+        @for (movimiento of j.movimientos; track movimiento.nombre) {
+          <button
+            type="button"
+            [class]="'ataque tipo-' + movimiento.tipo"
+            (click)="atacar(movimiento)"
+            [disabled]="!puedeAtacar()">
+            {{ movimiento.nombre }}
+          </button>
+        }
+      </div>
+
+      @if (turnoEnCurso()) {
+        <p class="estado" role="status">Calculando el turno...</p>
+      }
+
+      @if (aviso()) {
+        <p class="error" role="alert">{{ aviso() }}</p>
+      }
+
+      @if (ganador()) {
+        <p class="ganador"> ¡Ganó {{ ganador() }}!</p>
+      }
+
+      <h2>Así va la batalla</h2>
+      <ul class="registro">
+        @for (linea of registro(); track $index) {
+          <li>{{ linea }}</li>
+        } @empty {
+          <li>Todavía no hay movimientos. ¡Lanza el primer ataque!</li>
+        }
+      </ul>
+
+      <button type="button" class="reiniciar" (click)="reiniciar()" [disabled]="turnoEnCurso()">
+        Reiniciar batalla
+      </button>
+    </section>
+  } @else {
+    <p class="vacio">Falta elegir al rival para comenzar.</p>
+  }
+} @else {
+  <p class="vacio">Elige a tus dos luchadores para comenzar la batalla.</p>
+}

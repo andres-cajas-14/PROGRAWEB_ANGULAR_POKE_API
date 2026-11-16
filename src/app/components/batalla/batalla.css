@@ -1,0 +1,205 @@
+.jugadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lado {
+  flex: 1;
+  min-width: 260px;
+}
+
+.panel {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.ataques {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  padding: 9px 16px;
+  background-color: #2f6fb3;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #255a92;
+}
+
+button:disabled {
+  background-color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+.reiniciar {
+  margin-top: 12px;
+  background-color: #555555;
+  text-transform: none;
+}
+
+.reiniciar:hover {
+  background-color: #3d3d3d;
+}
+
+.registro {
+  max-height: 200px;
+  margin: 0;
+  padding: 10px 10px 10px 28px;
+  overflow-y: auto;
+  background-color: #f4f6f8;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.registro li {
+  padding: 2px 0;
+  text-transform: capitalize;
+}
+
+.vacio {
+  color: #666666;
+  font-style: italic;
+  text-align: center;
+}
+
+.estado {
+  color: #555555;
+  font-style: italic;
+}
+
+.error {
+  color: #b3261e;
+}
+
+.ganador {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e7d32;
+  text-transform: capitalize;
+}
+
+.jugadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lado {
+  flex: 1;
+  min-width: 260px;
+}
+
+.panel {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-top: 5px solid #6f35fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  margin-top: 0;
+  color: #2d3aa3;
+  font-size: 18px;
+}
+
+.ataques {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+
+.ataque {
+  background-color: var(--color, #3b4cca);
+}
+
+.ataque:hover {
+  filter: brightness(1.12);
+}
+
+button:disabled {
+  background-color: #b8b8c4;
+  text-shadow: none;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.reiniciar {
+  margin-top: 12px;
+  background-color: #555b6e;
+  text-transform: none;
+}
+
+.reiniciar:hover {
+  background-color: #3d4252;
+}
+
+.registro {
+  max-height: 200px;
+  margin: 0;
+  padding: 10px 10px 10px 28px;
+  overflow-y: auto;
+  background-color: #f1f3f9;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.registro li {
+  padding: 2px 0;
+  text-transform: capitalize;
+}
+
+.vacio {
+  color: #5a5f73;
+  font-style: italic;
+  text-align: center;
+}
+
+.estado {
+  color: #555555;
+  font-style: italic;
+}
+
+.error {
+  color: #b3261e;
+}
+
+.ganador {
+  margin: 14px 0;
+  padding: 10px;
+  background: linear-gradient(90deg, #ffe27a, #ffcb05);
+  border-radius: 10px;
+  color: #5a4300;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+}

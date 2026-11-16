@@ -1,0 +1,15 @@
+<form class="buscador" (submit)="$event.preventDefault(); buscar(nombre.value)">
+  <label>
+    {{ etiqueta() }}
+    <input #nombre type="search" placeholder="Ej: pikachu o 25" [disabled]="cargando()">
+  </label>
+  <button type="submit" [disabled]="cargando()">Buscar</button>
+</form>
+
+@if (cargando()) {
+  <p class="estado" role="status">Buscando Pokémon...</p>
+}
+
+@if (error()) {
+  <p class="error" role="alert">{{ error() }}</p>
+}

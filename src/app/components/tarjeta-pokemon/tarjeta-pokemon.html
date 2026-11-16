@@ -1,0 +1,40 @@
+<article class="tarjeta" [class]="claseTipo()">
+  <header class="cabecera">
+    <h3>{{ luchador().pokemon.nombre }}</h3>
+    <span class="numero">#{{ luchador().pokemon.id }}</span>
+  </header>
+
+  <div class="imagen">
+    @if (luchador().pokemon.imagen; as imagen) {
+      <img [src]="imagen" [alt]="luchador().pokemon.nombre">
+    } @else {
+      <p class="sin-imagen">Sin imagen disponible</p>
+    }
+  </div>
+
+  <div class="cuerpo">
+    <p class="tipos">
+      @for (tipo of luchador().pokemon.tipos; track tipo) {
+        <span class="insignia" [class]="'insignia tipo-' + tipo">{{ tipo }}</span>
+      }
+    </p>
+
+    
+    <p class="vida">Vida: <strong>{{ vida() }}</strong> / {{ luchador().pokemon.vida }}</p>
+
+    <div class="estadisticas">
+      <p>Ataque<strong>{{ luchador().pokemon.ataque }}</strong></p>
+      <p>Defensa<strong>{{ luchador().pokemon.defensa }}</strong></p>
+    </div>
+
+    <h4>Ataques</h4>
+    <ul>
+      @for (movimiento of luchador().movimientos; track movimiento.nombre) {
+        <li [class]="'tipo-' + movimiento.tipo">
+          {{ movimiento.nombre }}
+          <span class="poder">poder {{ movimiento.poder }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</article>
